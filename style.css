@@ -93,7 +93,7 @@ body {
 }
 
 /* Reduced Motion disabled */
-@media (prefers-reduced-motion: reduced) {
+@media (prefers-reduced-motion: reduce) {
   .links a {
     transition-duration: 0.001ms;
   }
