@@ -1,0 +1,99 @@
+/* Settings */
+:root {
+  --green: hsl(75, 94%, 57%);
+  --white: hsl(0, 0%, 100%);
+  --grey-700: hsl(0, 0%, 20%);
+  --grey-800: hsl(0, 0%, 12%);
+  --grey-900: hsl(0, 0%, 8%);
+  /* Font */
+  --font-family: 'Inter', sans-serif;
+  --font-size: 1.4rem;
+  --font-size-title: 2.4rem;
+  /* Spacing */
+  --space: 2.4rem;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General Styles */
+html {
+  font-size: 62.5%;
+}
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100dvh;
+  padding: 1rem;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: 1.5;
+  color: var(--white);
+  background-color: var(--grey-900);
+}
+
+/* Card Styles */
+.card {
+  width: min(100%, 38.4rem);
+  padding: var(--space);
+  text-align: center;
+  background-color: var(--grey-800);
+  border-radius: 1.4rem;
+  > *:not(img, address) {
+    margin-block-start: var(--space);
+  }
+}
+.userpic {
+  width: 8.7rem;
+  aspect-ratio: 1;
+  border-radius: 100%;
+}
+.fullname {
+  font-size: var(--font-size-title);
+  font-weight: 600;
+  translate: 0 -2px; /* Pixel Perfect! 👌 */
+}
+.location {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--green);
+}
+.links {
+  ul {
+    list-style: none;
+  }
+  li:not(:first-child) {
+    margin-block-start: 1.5rem;
+  }
+  a {
+    display: block;
+    padding: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: inherit;
+    background-color: var(--grey-700);
+    border-radius: 0.8rem;
+    &:hover {
+      color: var(--grey-900);
+      background-color: var(--green);
+    }
+  }
+}
+
+/* Responsive adjustments */
+@media (width > 76.8rem) {
+  .card {
+    padding: 4rem;
+  }
+}
+
+/* Reduced Motion disabled */
+@media (prefers-reduced-motion: no-preference) {
+  .links a {
+    transition: all 0.3s ease;
+  }
+}
